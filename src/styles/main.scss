@@ -10,8 +10,21 @@
 $black: #000;
 $white: #FFFFFF;
 
+$r_minmob: 320px;
+$r_mob_360: 360px;
+$r_mob_400: 400px;
+$r_mob_570: 570px;
+$r_mob_690: 690px;
+$r_tab: 768px;
+$r_tab_900: 900px;
+$r_desk: 1000px;
+$r_desk_hd: 1200px;
+
 html {
     font-size: 10px;
+    @media (max-width: $r_desk_hd) {
+        font-size: 8px;;
+    }
 }
 
 body {
@@ -26,26 +39,46 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 1.9rem;
+    margin-top: 1.5rem;
+    @media (max-width: $r_desk) {
+        padding-left: 3rem;
+        padding-right: 1.2rem;
+        margin-top: 1rem;
+    }
+    @media (max-width: $r_tab) {
+        margin-top: 1.2rem;
+    }
     &__left {
         display: flex;
         gap: 4rem;
+        @media (max-width: $r_desk) {
+            gap: 3.5rem
+        }
     }
     &__title {
         font-size: 1.8rem;
         color: $black;
+        @media (max-width: $r_mob_570) {
+            display: none;
+        }
+        @media (max-width: $r_desk) {
+            letter-spacing: -0.02rem;
+        }
     }
     &__line {
         background-color: $white;
         margin-top: .6rem;
         margin-bottom: 0;
+        @media (max-width: $r_tab) {
+            margin-top: 0.5rem;
+        }
     }
     &__red_line {
         background-color: red;
-        height: 3px;
-        width: 26.8rem;
+        height: .3rem;
+        width: 21%;
         margin-left: 0;
-        margin-top: -2px;
+        margin-top: -.2rem;
     }
 }
 .logo {
@@ -72,166 +105,387 @@ body {
     margin: 0 auto;
     padding-left: 3.2rem;
     padding-right: 3.2rem;
+    @media (max-width: $r_tab) {
+        padding-left: 3rem;
+        padding-right: 1rem;
+    }
 }
 .main {
     .text {
         margin: 5rem 3.3rem 6rem;
         font-size: 4.8rem;
-        letter-spacing: .7px;
+        letter-spacing: .07rem;
         font-family: 'PT-Root-UI_Bold';
+        @media (max-width: $r_desk) {
+            letter-spacing: -0.05rem;
+            margin-bottom: 5.7rem;
+            margin-top: 4.5rem;
+        }
+        @media (max-width: $r_tab) {
+            margin-bottom: 5.4rem;
+            margin-top: 4.9rem;
+        }
     }
     &__text {
-        padding: 31px 1px 43px;
+        margin: 5.5rem .1rem 7rem;
         font-size: 3.7rem;
-        letter-spacing: 1px;
+        letter-spacing: .1rem;
+        @media (max-width: $r_desk) {
+            letter-spacing: 0.02rem;
+            margin-bottom: 6.5rem;
+        }
+        @media (max-width: $r_tab) {
+            margin: 5.2rem 0.1rem 5.4rem;
+        }
+    }
+    &__video {
+        display: none;
+        @media (max-width: $r_tab_900) {
+            display: block;
+        }
     }
 }
 .design {
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
     &__models {
         display: flex;
-        gap: 26px;
-        margin-top: 32px;
-        margin-bottom: 56px;
+        gap: 2.6rem;
+        margin-top: 7.5rem;
+        margin-bottom: 5.6rem;
+        @media (max-width: $r_desk) {
+            margin-top: 2rem;
+            margin-bottom: 5rem;
+            gap: 2.8rem;
+        }
+        @media (max-width: $r_tab_900) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 47px 18px;
+            margin-bottom: 5.7rem;
+        }
+        @media (max-width: $r_tab) {
+            max-width: 84rem;
+            gap: 50px 15px;
+            margin-bottom: 5.5rem;
+        }
     }
     &__infinity{  
         cursor: pointer;
         border-radius: 1%;
         background-color: #171717;
         color: $white !important;
-        font-size: 16px;
-        margin-bottom: 80px;
+        font-size: 1.6rem;
+        margin-bottom: 8rem;
+        @media (max-width: $r_tab_900) {
+            margin-bottom: 0;
+        }
     }
     &__img_inf {
-        margin: 26px auto 0;
+        margin: 2.6rem auto 0;
         display: block;
-        width: 210px;
+        width: 21rem;
+        @media (max-width: $r_tab_900) {
+            width: 32.5rem;
+        }
+        @media (max-width: $r_mob_690) {
+            width: 23.5rem;
+        }
     }
     &__img_samsung {
-        width: 200px;
+        width: 20rem;
         display: block;
-        margin: 0 auto 33px;
+        margin: 0 auto 3.3rem;
+        @media (max-width: $r_desk) {
+            margin-bottom: 2.5rem;
+        }
     }
-    &__img_colors {
-        width: 78px;
+    &__img_colors, &__img_glass {
+        width: 7.8rem;
         display: block;
-        margin: 0 auto 25px;
-    }
-    &__img_glass {
-        width: 78px;
-        display: block;
-        margin: 0 auto 25px;
+        margin: 0 auto 2.5rem;
+        @media (max-width: $r_tab_900) {
+            margin-bottom: 2rem;
+        }
     }
     .dowd {
-        margin: 15px;
+        margin: 1.5rem;
     }
     .infinity {
         font-size: 1.6rem;
-        margin: 25px 20px;
-        letter-spacing: 1.13px;
-        line-height: 27.1px;
+        margin: 2.5rem 2rem;
+        letter-spacing: .113rem;
+        line-height: 2.71rem;
+        @media (max-width: $r_desk) {
+            margin: 1.8rem 1.7rem;
+            letter-spacing: 0.08rem;
+            line-height: 2.6rem;
+        }
+        @media (max-width: $r_tab_900) {
+            margin-top: 2.5rem;
+            margin-bottom: 3.5rem;
+        }
     }
     .samsung {
-        padding: 5px 0px;
-        letter-spacing: 1px;
-        line-height: 31px;
+        padding: .5rem 0;
+        letter-spacing: .1rem;
+        line-height: 3.1rem;
+        @media (max-width: $r_desk) {
+            letter-spacing: 0.05rem;
+            line-height: 3rem;
+        }
+        @media (max-width: $r_tab_900) {
+            letter-spacing: -0.07rem;
+            line-height: 2.8rem;
+            padding: 0;
+        }
     }
 }
 .line {
     color: $white;
     margin-top: 0;
+    width: 85%;
 }
 .description {
     font-size: 1.9rem;
-    letter-spacing: 0.9px;
-    line-height: 31px;
+    letter-spacing: .09rem;
+    line-height: 3.1rem;
+    @media (max-width: $r_desk) {
+        letter-spacing: 0.03rem;
+        line-height: 3rem;
+    }
+    @media (max-width: $r_tab_900) {
+        letter-spacing: 0.07rem;
+        line-height: 2.7rem;
+    }
+    @media (max-width: $r_tab) {
+        letter-spacing: -0.07rem;
+    }
 }
 .link {
     text-decoration: none;
     color: $black;
     max-width: 289px;
+    @media (max-width: $r_desk) {
+        max-width: 220px;
+    }
+    @media (max-width: $r_tab_900) {
+        max-width: 323px;
+    }
+    @media (max-width: $r_mob_570) {
+        max-width: 450px;
+    }
 }
 .scanner {
-    margin-bottom: 105px;
+    margin-bottom: 13.5rem;
+    @media (max-width: $r_desk) {
+        margin-bottom: 13rem;
+    }
+    &__video {
+        @media (max-width: $r_tab_900) {
+            display: none;
+        }
+    }
     &__flex {
         display: flex;
-        gap: 54px;
+        gap: 5.4rem;
+        @media (max-width: $r_desk) {
+            gap: 5rem;
+        }
+        @media (max-width: $r_tab) {
+            margin-top: 7rem;
+            gap: 5.5rem;
+        }
+        @media (max-width: $r_mob_690) {
+            flex-direction: column;
+            align-items: center;
+            gap: 3rem;
+        }
     }
     &__camera {
-        width: 605px;
-        height: 323px;
+        width: 60.5rem;
+        height: 32.3rem;
+        @media (max-width: $r_desk) {
+            width: 58rem;
+            height: 31rem;
+        }
+        @media (max-width: $r_tab_900) {
+            width: 46rem;
+            height: 25rem;
+        }
+        @media (max-width: $r_tab) {
+            width: 40.5rem;
+            height: 21.5rem;
+        }
     }
     &__group {
         display: flex;
         flex-direction: column;
-        gap: 53px
+        gap: 5.3rem;
+        @media (max-width: $r_desk) {
+            gap: 5rem;
+        }
+        @media (max-width: $r_mob_690) {
+            gap: 2.4rem;
+        }
     }
     &__info {
         display: flex;
         align-items: center;
-        gap: 54px;
+        gap: 5.4rem;
+        @media (max-width: $r_desk) {
+            gap: 5rem;
+        }
+        @media (max-width: $r_mob_690) {
+            flex-direction: column;
+            gap: 1.6rem;
+        }
     }
     &__text {
         margin: 0;
-        font-size: 21px;
-        line-height: 31px;
-        letter-spacing: -0.2px;
+        font-size: 2.1rem;
+        line-height: 3.1rem;
+        letter-spacing: -.02rem;
         max-width: 440px;
+        @media (max-width: $r_desk) {
+            font-size: 2rem;
+            line-height: 3rem;
+            letter-spacing: -0.03rem;
+        }
+        @media (max-width: $r_tab_900) {
+            font-size: 1.9rem;
+        }
+        @media (max-width: $r_tab) {
+            max-width: 25.4rem;
+            font-size: 1.8rem;
+            line-height: 2.6rem;
+        }
+        @media (max-width: $r_mob_690) {
+            max-width: 74.5rem;
+        }
     }
 }
 .icon {
-    width: 77px;
-    height: 77px;
+    width: 7.7rem;
+    height: 7.7rem;
 }
 .accessory {
     &__options {
         display: flex;
-        margin-top: 30px;
-        gap: 26px;
-        margin-bottom: 61px;
+        margin-top: 7.3rem;
+        gap: 2.6rem;
+        margin-bottom: 6.1rem;
+        @media (max-width: $r_desk) {
+            margin: 0 auto 5.4rem;
+        }
+        @media (max-width: $r_tab_900) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            max-width: 86rem;
+            row-gap: 5rem;
+            justify-content: center;
+        }
+        @media (max-width: $r_mob_570) {
+            grid-template-areas: "a a" "b b" "c d";
+            justify-items: center;
+        }
+    }
+    .gr:nth-child(1) {
+        grid-area: a;
+    }
+    
+    .gr:nth-child(2) {
+        grid-area: b;
+    }
+    
+    .gr:nth-child(3) {
+        grid-area: c;
+    }
+    
+    .gr:nth-child(4) {
+        grid-area: d;
     }
     &__img {
-        width: 289px;
-        height: 152px;
-        margin-bottom: 27px;
+        width: 28.9rem;
+        height: 15.2rem;
+        margin-bottom: 2.7rem;
+        @media (max-width: $r_desk) {
+            width: 28rem;
+            height: 15rem;
+            margin-bottom: 2.2rem;
+        }
+        @media (max-width: $r_tab_900) {
+            width: 40rem;
+            height: 21rem;
+        }
+        @media (max-width: $r_mob_690) {
+            width: 32rem;
+            height: 18rem;
+        }
+    }
+    &__desktop {
+        @media (max-width: $r_tab) {
+            display: none;
+        }
+    }
+    &__tab {
+        display: none;
+        @media (max-width: $r_tab) {
+            display: block;
+            margin-top: 23px;
+            margin-bottom: 7px;
+        }
     }
     .access {
-        margin-top: 26px;
+        margin-top: 2.6rem;
     }
     .black_line {
         color: $black;
         width: 6.3rem;
         margin-left: 0;
-        margin-top: -10px;
+        margin-top: -1.2rem;
     }
 }
 .services {
     &__img {
-        width: 60px;
-        height: 60px;
+        width: 6rem;
+        height: 6rem;
     }
     &__options {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 46px 28px;
-        margin-top: 27px;
-        margin-bottom: 100px;
+        gap: 4.6rem 2.8rem;
+        margin-top: 2.7rem;
+        margin-bottom: 10rem;
+        @media (max-width: $r_tab) {
+            margin-top: 6.7rem;
+            row-gap: 2.6rem;
+        }
     }
     &__item {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 8px;        
+        gap: .8rem;        
         max-width: 396px;
+        @media (max-width: $r_desk) {
+            gap: .3rem;
+        }
     }
     &__description {
-        letter-spacing: 1px;
+        letter-spacing: .1rem;
+        @media (max-width: $r_desk) {
+            letter-spacing: 0;
+        }
+        @media (max-width: $r_tab) {
+            letter-spacing: -0.03rem;
+            font-size: 1.8rem;
+        }
     }
 }
 /* Modal */
 .header_menu {
-    width: 41px;
-    height: 41px;
+    width: 4.1rem;
+    height: 4.1rem;
     background-image: url(../images/menu.svg);
     background-repeat: no-repeat;
     background-size: contain;
@@ -248,8 +502,8 @@ body {
     top: -400px;
     left: 0;
     right: 0;
-    margin: 20px auto 0;
-    padding: 40px 30px;
+    margin: 2rem auto 0;
+    padding: 4rem 3rem;
     box-sizing: border-box;
     transition: .5s;
     z-index: 1;
@@ -259,11 +513,11 @@ body {
         padding-left: 0;
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 1rem;
     }
     &__menu_close {
-        height: 17px;
-        width: 17px;
+        height: 1.7rem;
+        width: 1.7rem;
         background-image: url(../images/close.svg);
         background-repeat: no-repeat;
         background-size: contain;
@@ -271,8 +525,8 @@ body {
         border: none;
         cursor: pointer;
         position: absolute;
-        top: 20px;
-        right: 20px;
+        top: 2rem;
+        right: 2rem;
     }
 }
 .link_serf {
