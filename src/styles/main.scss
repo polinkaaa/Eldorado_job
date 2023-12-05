@@ -197,6 +197,8 @@ body {
         max-width: 322px;
     }
     @media (max-width: $r_mob_570) {
+        max-width: -webkit-fit-content;
+        max-width: -moz-fit-content;
         max-width: fit-content;
     }
 }
@@ -322,6 +324,8 @@ body {
             max-width: 322px;
         }
         @media (max-width: $r_mob_400) {
+            max-width: -webkit-fit-content;
+            max-width: -moz-fit-content;
             max-width: fit-content;
         }
     }
@@ -501,7 +505,8 @@ body {
             margin-bottom: 4.2rem;
         }
         @media (max-width: $r_mob_690) {
-            column-gap: 5rem;
+            -moz-column-gap: 5rem;
+                 column-gap: 5rem;
         }
         @media (max-width: $r_mob_570) {
             grid-template-areas: "a a" "b b" "c d";
@@ -687,6 +692,8 @@ body {
         }
         @media (max-width: $r_mob_570) {
             flex-direction: row;
+            max-width: -webkit-fit-content;
+            max-width: -moz-fit-content;
             max-width: fit-content;
             gap: 20px;
         }
@@ -707,6 +714,8 @@ body {
             max-width: 213px;
         }
         @media (max-width: $r_mob_570) {
+            max-width: -webkit-fit-content;
+            max-width: -moz-fit-content;
             max-width: fit-content;
         }
         @media (max-width: $r_mob_360) {
